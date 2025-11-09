@@ -1,75 +1,192 @@
-<!doctype html><html lang="fr">
+<!doctype html>
+<html lang="fr">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>PostQuantique.fr — Décider quand migrer vers le PQC (NIST)</title>
-<meta name="description" content="Guide décision FR/EN pour la migration post-quantique (PQC) : risque HNDL, priorités par secteur, trajectoires NIST, critères RFP. Domaine stratégique — cession/licence possible.">
-<link rel="icon" href="/logo-postquantique.png">
-<meta property="og:title" content="PostQuantique.fr — Décider quand migrer vers le PQC (NIST)">
-<meta property="og:description" content="Synthèse actionnable : harvest-now-decrypt-later, roadmaps NIST, critères techniques RFP. Priorité acteurs européens.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PostQuantique.fr</title>
+<meta name="description" content="PostQuantique.fr — Autorité & sécurité pour la migration post-quantique (PQC) : authentification, chiffrement, conformité et protection des données. Offres sérieuses uniquement (entreprises & institutions).">
+<meta property="og:title" content="PostQuantique.fr">
+<meta property="og:description" content="Autorité & sécurité pour la migration post-quantique (PQC). Offres sérieuses entreprises & institutions.">
 <meta property="og:image" content="https://www.postquantique.fr/og.jpg">
-<meta name="theme-color" content="#f7f4ef">
+<link rel="icon" href="/logo-postquantique.png">
 <style>
-:root{--bg:#f7f4ef;--card:#fff;--ink:#111827;--muted:#4b5563;--line:#e5e7eb;--accent:#b45309}
-*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,Inter,Roboto}
-.wrap{max-width:980px;margin:auto;padding:48px 20px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;margin:14px 0}
-h1{font-size:34px;margin:0 0 6px}h2{font-size:22px;margin:22px 0 10px}
-p,li{color:var(--muted)}.row{display:grid;gap:10px}.sep{height:1px;background:var(--line);margin:8px 0 14px}
-.cta a{display:inline-block;margin:10px 10px 0 0;padding:12px 16px;border-radius:12px;text-decoration:none;border:1px solid var(--line)}
-.btn{background:var(--accent);color:#fff;border-color:transparent;font-weight:600}.ghost{background:#fff;color:var(--ink)}
-.badge{display:inline-block;background:#fff7ed;color:#7c2d12;border:1px solid #fed7aa;border-radius:999px;padding:4px 10px;font-size:12px}
-.small{font-size:14px}.footer{margin-top:10px;font-size:13px;color:#6b7280;text-align:center}
-.links a{color:#0f172a;text-decoration:underline}.update{font-size:12px;color:#64748b}
-.logo{width:120px;height:auto;display:block;margin:6px 0 10px}
+:root{
+  /* Thème BCI access (dark premium) */
+  --bg:#0e1621; --card:#121b27; --ink:#e9eef5; --muted:#a9b4c2;
+  --line:#223042; --pill:#0f2236; --accent:#88c6ff; --accent2:#77f2c9;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:15.5px/1.65 system-ui, -apple-system, Segoe UI, Inter, Roboto, Arial}
+a{color:inherit}
+.wrap{max-width:960px;margin:30px auto;padding:0 16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:14px}
+.hrow{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.logo{width:132px;height:auto;margin:6px 0 2px}
+h1{font-size:28px;margin:0 0 8px 0}
+h2{font-size:16px;margin:0 0 10px 0;color:var(--ink)}
+p{margin:6px 0;color:var(--muted)}
+.badges{display:flex;flex-wrap:wrap;gap:8px}
+.badge{background:var(--pill);border:1px solid var(--line);color:#cfe5ff;border-radius:999px;padding:6px 10px;font-size:12.5px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.btn{background:#11263a;border:1px solid #1e3851;color:#d8eeff;padding:8px 12px;border-radius:10px;text-decoration:none}
+.btn:hover{border-color:#396289}
+.btn-ghost{background:#0f1f33;border:1px solid #263a51;color:#cbd8e6}
+.pill{display:inline-block;background:#0f1f33;border:1px solid var(--line);border-radius:999px;padding:6px 10px;color:#c9d6e6;font-size:12.5px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.item{background:var(--pill);border:1px solid var(--line);padding:10px 12px;border-radius:10px;color:#c7d5e6}
+.footer{font-size:12.5px;color:#93a2b3;margin:14px 0;text-align:left}
+.lang{display:flex;gap:8px}
+.lang a{display:inline-block;background:#0f1f33;border:1px solid var(--line);padding:6px 10px;border-radius:999px;color:#cbd8e6;text-decoration:none}
+.lang a.active{border-color:#2d5073;color:#e9f4ff}
+.sep{height:1px;background:var(--line);margin:10px 0 12px}
+.small{font-size:13px;color:var(--muted)}
+.header-note{font-size:12px;color:#9ab0c6}
+@media (max-width:720px){.grid{grid-template-columns:1fr}}
 </style>
+<script>
+function setLang(lang){
+  document.documentElement.lang = lang;
+  document.getElementById('fr').style.display = (lang==='fr')?'block':'none';
+  document.getElementById('en').style.display = (lang==='en')?'block':'none';
+  document.getElementById('btn-fr').classList.toggle('active', lang==='fr');
+  document.getElementById('btn-en').classList.toggle('active', lang==='en');
+}
+</script>
 </head>
-<body><main class="wrap">
+<body onload="setLang('fr')">
+  <div class="wrap">
 
-<section class="card">
-  <div class="update">Dernière mise à jour : novembre 2025 · FR · <a href="#en" class="links">EN</a></div>
-  <img class="logo" src="/logo-postquantique.png" alt="PostQuantique.fr">
-  <h1>PostQuantique.fr</h1>
-  <p class="small">Aide à la décision pour le <strong>chiffrement post-quantique (PQC)</strong> : risque <em>harvest-now-decrypt-later</em>, priorités par secteur, trajectoires <strong>NIST</strong>.</p>
+    <!-- HEADER / LANG -->
+    <div class="hrow">
+      <div class="header-note">Disponible à l’acquisition</div>
+      <div class="lang">
+        <a href="#fr" id="btn-fr" onclick="setLang('fr')">FR</a>
+        <a href="#en" id="btn-en" onclick="setLang('en')">EN</a>
+      </div>
+    </div>
 
-  <h2>À quoi ça sert (concret)</h2>
-  <ul class="row">
-    <li>Cartographier les <strong>données longue durée</strong> (santé, finance, public) exposées au HNDL.</li>
-    <li>Lancer des <strong>pilotes hybrides</strong> (PQC + crypto classiques) sur les flux critiques.</li>
-    <li>Tracer une <strong>feuille de route 24–36 mois</strong> (clés, perfs, compat applicative).</li>
-    <li>Préparer un <strong>RFP</strong> (libs certifiées, HSM/PKI, interop, SLO).</li>
-  </ul>
+    <!-- ======= VERSION FR ======= -->
+    <div id="fr">
+      <div class="card">
+        <div class="hrow">
+          <h1>PostQuantique.fr</h1>
+        </div>
+        <img class="logo" src="/logo-postquantique.png" alt="PostQuantique.fr">
+        <p>Autorité, sécurité & migration post-quantique (PQC) — authentification, chiffrement, conformité, éthique & protection des données.</p>
+        <p><strong>Offres sérieuses uniquement (entreprises & institutions).</strong></p>
+        <div class="btns">
+          <a class="btn" href="mailto:contact@postquantique.fr?subject=PostQuantique.fr%20-%20Offre%20ou%20NDA">Proposer une offre / Demander un NDA</a>
+          <a class="btn btn-ghost" href="#fr-why">Pourquoi ce nom ?</a>
+        </div>
+      </div>
 
-  <h2>Ressources (sur demande)</h2>
-  <p class="small">PDF “Guide PQC 20 min”, tableau “Priorités par secteur”, checklist RFP. <strong>Offres sérieuses entreprise/institution uniquement</strong> — <strong>priorité acteurs européens</strong>.</p>
+      <div class="grid">
+        <div class="card">
+          <h2>Pourquoi ce nom vaut cher</h2>
+          <div class="item">Autorité & mémorisation — exact-match “postquantique.fr”, référence FR/EU</div>
+          <div class="item">Adoption B2B immédiate — accès/sécurité/chiffrement appliqués au PQC</div>
+          <div class="item">Couverture large — IAM/ABAC, SDK, APIs, conformité (NIST, ANSSI)</div>
+          <div class="item">Périmètre stratégique — santé, finance, secteur public, régaliens</div>
+        </div>
+        <div class="card">
+          <h2>Cas d’usage possibles</h2>
+          <div class="item">Sécurité & privacy : chiffrement hybride, anonymisation, gestion clés, HSM/PKI</div>
+          <div class="item">Risque HNDL : inventaire données longue durée, priorisation par systèmes</div>
+          <div class="item">Conformité : trajectoires alignées NIST, exigences DORA/ISO, traçabilité</div>
+          <div class="item">Plateformes : composants PQC, bibliothèques, kits dev & portails</div>
+        </div>
+      </div>
 
-  <div class="cta">
-    <a class="btn" href="mailto:contact@postquantique.fr?subject=PostQuantique.fr%20-%20Contact">Contacter</a>
-    <a class="ghost" href="#en">English summary</a>
-    <span class="badge">Cession/licence — à partir de 80 k€</span>
+      <div id="fr-why" class="card">
+        <h2>Acquisition (process sécurisé)</h2>
+        <p>Process : NDA → data-room → offre → escrow → transfert. Vision long-terme & usage à forte valeur.</p>
+        <div class="badges">
+          <span class="badge">Priorité aux acteurs européens</span>
+          <span class="badge">Usage responsable & éthique</span>
+          <span class="badge">Aucune affiliation officielle</span>
+        </div>
+        <div class="btns" style="margin-top:8px">
+          <a class="btn" href="mailto:contact@postquantique.fr?subject=PostQuantique.fr%20-%20Contact">Contact direct : contact@postquantique.fr</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Actifs complémentaires (sélection)</h2>
+        <div class="badges">
+          <a class="badge" href="https://conformitedora.fr/" target="_blank" rel="noopener">ConformiteDORA.fr — conformité cyber secteur financier</a>
+          <a class="badge" href="https://quantique.io/" target="_blank" rel="noopener">Quantique.io — référence européenne du quantique</a>
+          <a class="badge" href="https://payrisk.ai/" target="_blank" rel="noopener">PayRisk.ai — sécurité paiements & risques</a>
+          <a class="badge" href="https://bciaccess.com/" target="_blank" rel="noopener">BCIaccess.com — identité & sécurité BCI</a>
+        </div>
+        <p class="small">Séries d’offres, multi-actifs possibles. Contact : <a href="mailto:contact@postquantique.fr">contact@postquantique.fr</a></p>
+      </div>
+
+      <div class="footer">
+        © PostQuantique.fr — actif numérique premium. Aucune affiliation avec des marques tierces. Usage descriptif uniquement. — Contact : <a href="mailto:contact@postquantique.fr">contact@postquantique.fr</a>
+      </div>
+    </div>
+
+    <!-- ======= VERSION EN ======= -->
+    <div id="en" style="display:none">
+      <div class="card">
+        <div class="hrow">
+          <h1>PostQuantique.fr</h1>
+        </div>
+        <img class="logo" src="/logo-postquantique.png" alt="PostQuantique.fr">
+        <p>Authority, security & post-quantum migration (PQC) — authentication, encryption, compliance, ethics & data protection.</p>
+        <p><strong>Serious offers only (companies & institutions).</strong></p>
+        <div class="btns">
+          <a class="btn" href="mailto:contact@postquantique.fr?subject=PostQuantique.fr%20-%20Offer%20or%20NDA">Submit an offer / Request NDA</a>
+          <a class="btn btn-ghost" href="#en-why">Why this name?</a>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h2>Why this name is valuable</h2>
+          <div class="item">Authority & memorability — exact-match “postquantique.fr”, FR/EU reference</div>
+          <div class="item">Instant B2B adoption — access/security/encryption applied to PQC</div>
+          <div class="item">Broad scope — IAM/ABAC, SDKs, APIs, compliance (NIST, ANSSI)</div>
+          <div class="item">Strategic domains — healthcare, finance, public sector, defense</div>
+        </div>
+        <div class="card">
+          <h2>Possible use cases</h2>
+          <div class="item">Security & privacy: hybrid crypto, anonymization, key mgmt, HSM/PKI</div>
+          <div class="item">HNDL risk: long-lived data inventory, system prioritization</div>
+          <div class="item">Compliance: NIST-aligned roadmaps, DORA/ISO requirements, traceability</div>
+          <div class="item">Platforms: PQC components, libraries, developer portals</div>
+        </div>
+      </div>
+
+      <div id="en-why" class="card">
+        <h2>Acquisition (secure process)</h2>
+        <p>Process: NDA → data room → offer → escrow → transfer. Long-term vision & high-value usage.</p>
+        <div class="badges">
+          <span class="badge">EU buyers priority</span>
+          <span class="badge">Responsible & ethical use</span>
+          <span class="badge">No official affiliation</span>
+        </div>
+        <div class="btns" style="margin-top:8px">
+          <a class="btn" href="mailto:contact@postquantique.fr?subject=PostQuantique.fr%20-%20Contact">Direct contact: contact@postquantique.fr</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Complementary assets (selection)</h2>
+        <div class="badges">
+          <a class="badge" href="https://conformitedora.fr/" target="_blank" rel="noopener">ConformiteDORA.fr — financial sector cyber compliance</a>
+          <a class="badge" href="https://quantique.io/" target="_blank" rel="noopener">Quantique.io — EU quantum reference</a>
+          <a class="badge" href="https://payrisk.ai/" target="_blank" rel="noopener">PayRisk.ai — payments security & risk</a>
+          <a class="badge" href="https://bciaccess.com/" target="_blank" rel="noopener">BCIaccess.com — identity & security for BCIs</a>
+        </div>
+        <p class="small">Series offers & multi-asset packs possible. Contact: <a href="mailto:contact@postquantique.fr">contact@postquantique.fr</a></p>
+      </div>
+
+      <div class="footer">
+        © PostQuantique.fr — premium digital asset. No affiliation with third-party trademarks. Descriptive use only. — Contact: <a href="mailto:contact@postquantique.fr">contact@postquantique.fr</a>
+      </div>
+    </div>
+
   </div>
-</section>
-
-<section class="card">
-  <h2>Qui doit s’y intéresser</h2>
-  <ul class="row">
-    <li><strong>MSSP & cabinets cyber</strong> (audits HNDL, offres managées).</li>
-    <li><strong>Éditeurs chiffrement / opérateurs cloud</strong> (libs PQC, HSM, PKI).</li>
-    <li><strong>Secteur public</strong> (données sensibles, durées longues).</li>
-    <li><strong>Banques / assurances</strong> (roadmaps PQC, exigences tierces).</li>
-  </ul>
-  <div class="sep"></div>
-  <div class="small links">Dans la même thématique :
-    <a href="https://conformitedora.fr/">ConformiteDORA.fr</a> ·
-    <a href="https://quantique.io/">Quantique.io</a> ·
-    <a href="https://payrisk.ai/">PayRisk.ai</a>
-  </div>
-</section>
-
-<section class="card" id="en">
-  <h2>English summary</h2>
-  <p><strong>PostQuantique.fr</strong> is a decision aide for <strong>PQC migration</strong>: assessing HNDL risk, sector priorities, and <strong>NIST-aligned</strong> roadmaps. Short PDF & sector table available upon request. <strong>Assignment/licensing</strong> considered for serious offers (EU priority). <span class="badge">Starting at €80k</span></p>
-  <div class="cta"><a class="btn" href="mailto:contact@postquantique.fr?subject=Inquiry%20about%20PostQuantique.fr">Get in touch</a></div>
-</section>
-
-<p class="footer">Éditeur : X. Brave — contact@postquantique.fr — Site informatif, aucune affiliation officielle. Marques citées © à leurs propriétaires. Offres sérieuses entreprise/institution uniquement — priorité acteurs européens.</p>
-</main></body></html>
+</body>
+</html>
