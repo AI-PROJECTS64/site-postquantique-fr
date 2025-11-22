@@ -39,47 +39,162 @@
   </script>
 
   <style>
-    :root{--bg:#0b1220;--card:#121a2b;--muted:#7a87a2;--text:#e9eefc;--accent:#8ab4ff;--chip:#1b2640;--shadow:0 10px 30px rgba(0,0,0,.35);--radius:18px}
+    :root{
+      --bg:#0b1220;
+      --card:#121a2b;
+      --muted:#7a87a2;
+      --text:#e9eefc;
+      --accent:#8ab4ff;
+      --chip:#1b2640;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:18px;
+    }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:15px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Arial,sans-serif}
-    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+    html,body{
+      margin:0;
+      padding:0;
+      background:var(--bg);
+      color:var(--text);
+      font:15px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Arial,sans-serif;
+    }
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
     .wrap{max-width:1040px;margin:0 auto;padding:28px}
-    .topbar{display:flex;justify-content:space-between;align-items:center;margin:8px 0 22px}
-    .badge{display:inline-flex;align-items:center;gap:8px;background:var(--chip);border:1px solid #23304a;border-radius:999px;padding:6px 12px;color:#b7c5e6;font-size:13px}
-    .lang{gap:10px;display:flex;align-items:center}
-    .lang button{background:var(--chip);color:var(--text);border:1px solid #23304a;padding:7px 12px;border-radius:999px;cursor:pointer}
-    .lang button[aria-pressed="true"]{background:var(--accent);color:#0b1422;border-color:transparent}
-    .card{background:var(--card);border:1px solid #23304a;border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
-    .hero h1{margin:0 0 8px;font-size:46px;letter-spacing:.5px}
-    .cta{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 6px}
-    .btn{display:inline-flex;align-items:center;gap:8px;background:#1a2a47;color:#fff;border:1px solid #26385e;padding:12px 16px;border-radius:999px;cursor:pointer;text-decoration:none}
-    .btn.primary{background:var(--accent);color:#0b1422;border-color:transparent}
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
-    .col-6{grid-column:span 6}.col-12{grid-column:span 12}
-    .chip{display:inline-block;background:var(--chip);border:1px solid #23304a;border-radius:999px;padding:6px 10px;font-size:13px;color:#b7c5e6}
-    .list{display:grid;gap:10px;margin:8px 0}
-    .muted{color:var(--muted)} .foot{opacity:.8;font-size:13px;margin-top:24px}
-    img.logo{max-width:260px;height:auto;display:block;margin:8px 0 6px;opacity:.95;border-radius:12px}
-    @media (max-width:860px){.col-6{grid-column:span 12}.hero h1{font-size:36px}}
-    .ico{width:16px;height:16px;display:inline-block;vertical-align:middle}
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin:8px 0 22px;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:var(--chip);
+      border:1px solid #23304a;
+      border-radius:999px;
+      padding:6px 12px;
+      color:#b7c5e6;
+      font-size:13px;
+    }
+    .lang{
+      gap:10px;
+      display:flex;
+      align-items:center;
+    }
+    .lang button{
+      background:var(--chip);
+      color:var(--text);
+      border:1px solid #23304a;
+      padding:7px 12px;
+      border-radius:999px;
+      cursor:pointer;
+    }
+    .lang button[aria-pressed="true"]{
+      background:var(--accent);
+      color:#0b1422;
+      border-color:transparent;
+    }
+    .card{
+      background:var(--card);
+      border:1px solid #23304a;
+      border-radius:var(--radius);
+      padding:26px;
+      box-shadow:var(--shadow);
+    }
+    .hero h1{
+      margin:0 0 8px;
+      font-size:46px;
+      letter-spacing:.5px;
+    }
+    .cta{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin:18px 0 6px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#1a2a47;
+      color:#fff;
+      border:1px solid #26385e;
+      padding:12px 16px;
+      border-radius:999px;
+      cursor:pointer;
+      text-decoration:none;
+      font-size:14px;
+    }
+    .btn.primary{
+      background:var(--accent);
+      color:#0b1422;
+      border-color:transparent;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:18px;
+    }
+    .col-6{grid-column:span 6}
+    .col-12{grid-column:span 12}
+    .chip{
+      display:inline-block;
+      background:var(--chip);
+      border:1px solid #23304a;
+      border-radius:999px;
+      padding:6px 10px;
+      font-size:13px;
+      color:#b7c5e6;
+    }
+    .list{
+      display:grid;
+      gap:10px;
+      margin:8px 0;
+    }
+    .muted{color:var(--muted)}
+    .foot{
+      opacity:.8;
+      font-size:13px;
+      margin-top:24px;
+    }
+    img.logo{
+      max-width:260px;
+      height:auto;
+      display:block;
+      margin:8px 0 6px;
+      opacity:.95;
+      border-radius:12px;
+    }
+    @media (max-width:860px){
+      .col-6{grid-column:span 12}
+      .hero h1{font-size:36px}
+    }
+    .ico{
+      width:16px;
+      height:16px;
+      display:inline-block;
+      vertical-align:middle;
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
     <div class="topbar">
-      <div class="badge">Disponible à l’acquisition</div>
+      <div class="badge" id="availability-label">Disponible à l’acquisition</div>
       <div class="lang">
         <button id="btn-fr" aria-pressed="true">FR</button>
         <button id="btn-en" aria-pressed="false">EN</button>
       </div>
     </div>
 
-    <!-- ================= HERO FR ================= -->
+    <!-- ================= HERO FR (PAR DÉFAUT) ================= -->
     <section class="card hero" data-fr>
       <h1>Postquantique.fr</h1>
       <img class="logo" src="/logo-postquantique.png" alt="Postquantique.fr" loading="eager">
       <p class="muted">
-        Bannière neutre & lisible pour la <b>cybersécurité post-quantique (PQC)</b> — inventaires cryptographiques, trajectoires de migration <b>PQ-ready</b>, gouvernance, <b>preuves & auditabilité</b>.<br>
+        Bannière neutre & lisible pour la <b>cybersécurité post-quantique (PQC)</b> — inventaires cryptographiques,
+        trajectoires de migration <b>PQ-ready</b>, gouvernance, <b>preuves & auditabilité</b>.<br>
         <b>Offres sérieuses uniquement (entreprises & institutions).</b>
       </p>
       <div class="cta">
@@ -88,11 +203,18 @@
         </a>
         <a class="btn" href="#value-fr">Pourquoi ce nom ?</a>
         <a class="btn" href="https://www.linkedin.com/company/postquantique" target="_blank" rel="noopener" aria-label="Ouvrir la page LinkedIn Postquantique">
-          <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.85 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.05c.53-1 1.84-2.05 3.78-2.05 4.04 0 4.79 2.66 4.79 6.13V23h-4v-6.5c0-1.55-.03-3.54-2.16-3.54-2.16 0-2.49 1.68-2.49 3.43V23h-4V8.5z"/></svg>
+          <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M4.98 3.5C4.98 4.88 3.85 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.05c.53-1 1.84-2.05 3.78-2.05 4.04 0 4.79 2.66 4.79 6.13V23h-4v-6.5c0-1.55-.03-3.54-2.16-3.54-2.16 0-2.49 1.68-2.49 3.43V23h-4V8.5z"/>
+          </svg>
           LinkedIn
         </a>
       </div>
-      <p class="muted" style="margin-top:8px"><b>Nota :</b> actif numérique premium. <b>Usage descriptif</b>. <b>Aucune affiliation officielle</b>. <b>Pas de conseil juridique.</b></p>
+      <p class="muted" style="margin-top:8px">
+        <b>Nota :</b> actif numérique premium (nom de domaine stratégique).
+        <b>Usage descriptif uniquement.</b>
+        <b>Aucune affiliation officielle</b> avec des autorités, organismes, marques ou programmes tiers.
+        <b>Pas de conseil juridique, financier ou de cybersécurité opérationnelle.</b>
+      </p>
     </section>
 
     <!-- ================= VALUE + USE CASES FR ================= -->
@@ -101,9 +223,9 @@
         <div class="col-6">
           <h3>Pourquoi ce nom vaut cher</h3>
           <div class="list">
-            <div class="chip">Exact-match mémorisable — “postquantique”, lisible C-suite</div>
+            <div class="chip">Exact-match mémorisable — « postquantique », lisible C-suite</div>
             <div class="chip">SEO B2B — PQC, crypto-agility, inventaires & trajectoires</div>
-            <div class="chip">Crédibilité — bannière neutre pour Sécurité/Juridique/IT</div>
+            <div class="chip">Crédibilité — bannière neutre pour Sécurité / Juridique / IT</div>
             <div class="chip">Ré-emploi — référentiels, matrices, preuves & <b>audit</b></div>
           </div>
         </div>
@@ -123,17 +245,30 @@
     <section class="card" style="margin-top:16px" data-fr>
       <h3>Pourquoi cet actif est stratégique (Ancrages CFO)</h3>
       <div class="list">
-        <div class="chip"><b>Ancrage stratégique :</b> bannière neutre pour aligner Exécutif, Sécurité, Juridique & IT sur PQC/crypto-agility.</div>
-        <div class="chip"><b>Coût alternatif (notoriété) :</b> 6–12 mois multi-pays + change mgmt : <b>€0,4M–1,5M</b> / 12–18 mois.</div>
-        <div class="chip"><b>Coût du retard :</b> dette crypto, risques, audits/clients différés : ~<b>€0,8M–2,0M</b> / 12–18 mois.</div>
-        <div class="chip"><b>Prime stratégique :</b> contrôle du langage “postquantique” (2025–2028), exact-match <b>.fr</b>.</div>
+        <div class="chip">
+          <b>Ancrage stratégique :</b> bannière neutre pour aligner Exécutif, Sécurité, Juridique & IT sur PQC / crypto-agility.
+        </div>
+        <div class="chip">
+          <b>Coût alternatif (notoriété) :</b> 6–12 mois multi-pays + change management :
+          <b>€0,4M–1,5M</b> / 12–18 mois.
+        </div>
+        <div class="chip">
+          <b>Coût du retard :</b> dette cryptographique, risques, audits / clients différés :
+          ~<b>€0,8M–2,0M</b> / 12–18 mois.
+        </div>
+        <div class="chip">
+          <b>Prime stratégique :</b> contrôle du langage « postquantique » (fenêtre 2025–2028), exact-match <b>.fr</b>.
+        </div>
       </div>
     </section>
 
     <!-- ================= ACQUISITION FR ================= -->
     <section class="card" style="margin-top:16px" data-fr>
       <h3>Acquisition (process sécurisé)</h3>
-      <p class="muted">NDA → data-room (brief stratégique) → offre → escrow → transfert. Vision long-terme & usage à forte valeur.</p>
+      <p class="muted">
+        NDA → data-room (brief stratégique) → offre → escrow → transfert.
+        Vision long-terme & usage à forte valeur (programme PQC, offre crypto-agility, hub UE, etc.).
+      </p>
       <a class="btn primary" href="mailto:contact@postquantique.fr?subject=Postquantique.fr%20-%20NDA%20%2F%20Proposition">
         Contact direct : contact@postquantique.fr
       </a>
@@ -143,21 +278,36 @@
     <section class="card" style="margin-top:16px" data-fr>
       <h3>Actifs complémentaires (sélection)</h3>
       <ul class="list">
-        <li class="chip"><a href="https://www.quantique.io" target="_blank" rel="noopener">Quantique.io</a> — hub quantique UE (média / logiciels / éducation)</li>
-        <li class="chip"><a href="https://www.quantacure.ai" target="_blank" rel="noopener">Quantacure.ai</a> — R&D santé/biotech x quantique</li>
-        <li class="chip"><a href="https://www.piplcompliance.com" target="_blank" rel="noopener">PIPLCompliance.com</a> — conformité PIPL (axe Chine)</li>
+        <li class="chip">
+          <a href="https://www.quantique.io" target="_blank" rel="noopener">Quantique.io</a>
+          — hub quantique UE (média / logiciels / éducation)
+        </li>
+        <li class="chip">
+          <a href="https://www.quantacure.ai" target="_blank" rel="noopener">Quantacure.ai</a>
+          — R&D santé / biotech x quantique
+        </li>
+        <li class="chip">
+          <a href="https://www.piplcompliance.com" target="_blank" rel="noopener">PIPLCompliance.com</a>
+          — conformité PIPL (axe Chine)
+        </li>
       </ul>
-      <p class="foot">Offres sérieuses uniquement. Possibilité de pack « multi-actifs ». <br>Contact : <a href="mailto:contact@postquantique.fr">contact@postquantique.fr</a></p>
+      <p class="foot">
+        Offres sérieuses uniquement. Possibilité de pack « multi-actifs ». <br>
+        Contact : <a href="mailto:contact@postquantique.fr">contact@postquantique.fr</a>
+      </p>
     </section>
 
-    <!-- ================= DOCS FR ================= -->
+    <!-- ================= DOCS FR (FR UNIQUEMENT) ================= -->
     <section class="card" style="margin-top:16px" data-fr>
       <h3>Documents / Briefs</h3>
+      <p class="muted">Brief d’acquisition (FR) pour les équipes Sécurité / Juridique / IT / Risk / M&A.</p>
       <div class="cta">
-        <a class="btn" href="/Acquisition%20Brief%20Postquantique-FR-202511.pdf" target="_blank" rel="noopener" type="application/pdf">👁️ Ouvrir (FR) dans le navigateur</a>
-        <a class="btn primary" href="/Acquisition%20Brief%20Postquantique-FR-202511.pdf" download="Postquantique-Brief-FR-202511.pdf" type="application/pdf">📥 Télécharger (FR, PDF)</a>
-        <a class="btn" href="/Acquisition%20Brief%20Postquantique-FR-EN-202511.pdf" target="_blank" rel="noopener" type="application/pdf">👁️ Open (EN) in browser</a>
-        <a class="btn primary" href="/Acquisition%20Brief%20Postquantique-FR-EN-202511.pdf" download="Postquantique-Brief-EN-202511.pdf" type="application/pdf">📥 Download (EN, PDF)</a>
+        <a class="btn" href="/Acquisition%20Brief%20Postquantique-FR-202511.pdf" target="_blank" rel="noopener" type="application/pdf">
+          Ouvrir (FR) dans le navigateur
+        </a>
+        <a class="btn primary" href="/Acquisition%20Brief%20Postquantique-FR-202511.pdf" download="Postquantique-Brief-FR-202511.pdf" type="application/pdf">
+          Télécharger (FR, PDF)
+        </a>
       </div>
     </section>
 
@@ -166,7 +316,8 @@
       <h1>Postquantique.fr</h1>
       <img class="logo" src="/logo-postquantique.png" alt="Postquantique.fr" loading="eager">
       <p class="muted">
-        Neutral, C-suite-readable banner for <b>post-quantum cybersecurity (PQC)</b> — crypto inventories, <b>PQ-ready</b> migration paths, governance, <b>evidence & auditability</b>.<br>
+        Neutral, C-suite-readable banner for <b>post-quantum cybersecurity (PQC)</b> — crypto inventories,
+        <b>PQ-ready</b> migration paths, governance, <b>evidence & auditability</b>.<br>
         <b>Serious offers only (companies & institutions).</b>
       </p>
       <div class="cta">
@@ -175,11 +326,18 @@
         </a>
         <a class="btn" href="#value-en">Why this name?</a>
         <a class="btn" href="https://www.linkedin.com/company/postquantique" target="_blank" rel="noopener" aria-label="Open Postquantique on LinkedIn">
-          <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.85 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.05c.53-1 1.84-2.05 3.78-2.05 4.04 0 4.79 2.66 4.79 6.13V23h-4v-6.5c0-1.55-.03-3.54-2.16-3.54-2.16 0-2.49 1.68-2.49 3.43V23h-4V8.5z"/></svg>
+          <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M4.98 3.5C4.98 4.88 3.85 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.05c.53-1 1.84-2.05 3.78-2.05 4.04 0 4.79 2.66 4.79 6.13V23h-4v-6.5c0-1.55-.03-3.54-2.16-3.54-2.16 0-2.49 1.68-2.49 3.43V23h-4V8.5z"/>
+          </svg>
           LinkedIn
         </a>
       </div>
-      <p class="muted" style="margin-top:8px"><b>Note:</b> premium digital asset. <b>Descriptive use</b>. <b>No official affiliation</b>. <b>No legal advice.</b></p>
+      <p class="muted" style="margin-top:8px">
+        <b>Note:</b> premium digital asset (strategic domain name).
+        <b>Descriptive use only.</b>
+        <b>No official affiliation</b> with any authorities, organisations, brands or third-party programs.
+        <b>No legal, financial or operational cybersecurity advice.</b>
+      </p>
     </section>
 
     <!-- ================= VALUE + USE CASES EN ================= -->
@@ -190,15 +348,15 @@
           <div class="list">
             <div class="chip">Exact-match & memorable — “postquantique”, C-suite readable</div>
             <div class="chip">B2B SEO — PQC, crypto-agility, inventories & roadmaps</div>
-            <div class="chip">Credibility — neutral banner for Security/Legal/IT</div>
-            <div class="chip">Re-use — references, matrices, evidence & <b>audit</b></div>
+            <div class="chip">Credibility — neutral banner for Security / Legal / IT</div>
+            <div class="chip">Re-use — reference frameworks, matrices, evidence & <b>audit</b></div>
           </div>
         </div>
         <div class="col-6">
           <h3>Possible use cases</h3>
           <div class="list">
             <div class="chip">Cryptographic inventory & dependency mapping</div>
-            <div class="chip">PQ-ready strategy: prioritization, pilots, roadmaps</div>
+            <div class="chip">PQ-ready strategy: prioritisation, pilots, migration paths</div>
             <div class="chip">Policies & control: keys, certificates, KMS/HSM</div>
             <div class="chip">Integrations: IAM, PKI, MDM, SIEM, evidence store</div>
           </div>
@@ -209,7 +367,10 @@
     <!-- ================= ACQUISITION EN ================= -->
     <section class="card" style="margin-top:16px" data-en hidden>
       <h3>Acquisition (secure process)</h3>
-      <p class="muted">NDA → data room (strategic brief) → offer → escrow → transfer. Long-term vision & high-value usage.</p>
+      <p class="muted">
+        NDA → data room (strategic brief) → offer → escrow → transfer.
+        Long-term vision & high-value usage (PQC program, crypto-agility offering, EU hub, etc.).
+      </p>
       <a class="btn primary" href="mailto:contact@postquantique.fr?subject=Postquantique.fr%20-%20NDA%20%2F%20Offer">
         Direct contact: contact@postquantique.fr
       </a>
@@ -219,34 +380,78 @@
     <section class="card" style="margin-top:16px" data-en hidden>
       <h3>Related assets (selection)</h3>
       <ul class="list">
-        <li class="chip"><a href="https://www.quantique.io" target="_blank" rel="noopener">Quantique.io</a> — EU quantum hub (media / software / education)</li>
-        <li class="chip"><a href="https://www.quantacure.ai" target="_blank" rel="noopener">Quantacure.ai</a> — health/biotech x quantum R&D</li>
-        <li class="chip"><a href="https://www.piplcompliance.com" target="_blank" rel="noopener">PIPLCompliance.com</a> — PIPL compliance (China axis)</li>
+        <li class="chip">
+          <a href="https://www.quantique.io" target="_blank" rel="noopener">Quantique.io</a>
+          — EU quantum hub (media / software / education)
+        </li>
+        <li class="chip">
+          <a href="https://www.quantacure.ai" target="_blank" rel="noopener">Quantacure.ai</a>
+          — health / biotech × quantum R&amp;D
+        </li>
+        <li class="chip">
+          <a href="https://www.piplcompliance.com" target="_blank" rel="noopener">PIPLCompliance.com</a>
+          — PIPL compliance (China axis)
+        </li>
       </ul>
-      <p class="foot">Serious offers only. Multi-asset pack available. <br>Contact: <a href="mailto:contact@postquantique.fr">contact@postquantique.fr</a></p>
+      <p class="foot">
+        Serious offers only. Multi-asset package available. <br>
+        Contact: <a href="mailto:contact@postquantique.fr">contact@postquantique.fr</a>
+      </p>
     </section>
 
-    <!-- ================= DOCS EN ================= -->
+    <!-- ================= DOCS EN (EN UNIQUEMENT) ================= -->
     <section class="card" style="margin-top:16px" data-en hidden>
       <h3>Documents / Briefs</h3>
+      <p class="muted">Acquisition brief (EN) for Security, Legal, IT, Risk or Corporate Development teams.</p>
       <div class="cta">
-        <a class="btn" href="/Acquisition%20Brief%20Postquantique-FR-EN-202511.pdf" target="_blank" rel="noopener" type="application/pdf">👁️ Open (EN) in browser</a>
-        <a class="btn primary" href="/Acquisition%20Brief%20Postquantique-FR-EN-202511.pdf" download="Postquantique-Brief-EN-202511.pdf" type="application/pdf">📥 Download (EN, PDF)</a>
-        <a class="btn" href="/Acquisition%20Brief%20Postquantique-FR-202511.pdf" target="_blank" rel="noopener" type="application/pdf">👁️ Ouvrir (FR) dans le navigateur</a>
-        <a class="btn primary" href="/Acquisition%20Brief%20Postquantique-FR-202511.pdf" download="Postquantique-Brief-FR-202511.pdf" type="application/pdf">📥 Télécharger (FR, PDF)</a>
+        <a class="btn" href="/Acquisition%20Brief%20Postquantique-FR-EN-202511.pdf" target="_blank" rel="noopener" type="application/pdf">
+          Open (EN) in browser
+        </a>
+        <a class="btn primary" href="/Acquisition%20Brief%20Postquantique-FR-EN-202511.pdf" download="Postquantique-Brief-EN-202511.pdf" type="application/pdf">
+          Download (EN, PDF)
+        </a>
       </div>
     </section>
 
-    <p class="foot muted">© Postquantique.fr — actif numérique premium. Aucune affiliation avec des marques/organismes tiers. Usage descriptif uniquement. Pas de conseil juridique. — Contact : <a href="mailto:contact@postquantique.fr">contact@postquantique.fr</a></p>
+    <!-- ================= FOOTERS ================= -->
+    <p class="foot muted" data-fr>
+      © Postquantique.fr — actif numérique premium (nom de domaine). Aucune affiliation avec des marques, organismes ou programmes tiers.
+      Usage descriptif uniquement. Pas de conseil juridique, financier ou de cybersécurité opérationnelle.
+      — Contact : <a href="mailto:contact@postquantique.fr">contact@postquantique.fr</a>
+    </p>
+    <p class="foot muted" data-en hidden>
+      © Postquantique.fr — premium digital asset (domain name). No affiliation with any brands, organisations or third-party programs.
+      Descriptive use only. No legal, financial or operational cybersecurity advice.
+      — Contact: <a href="mailto:contact@postquantique.fr">contact@postquantique.fr</a>
+    </p>
   </div>
 
   <script>
-    const frBtn=document.getElementById('btn-fr'); const enBtn=document.getElementById('btn-en');
-    const show=(lang)=>{document.querySelectorAll('[data-fr]').forEach(n=>n.hidden=(lang!=='fr'));
-      document.querySelectorAll('[data-en]').forEach(n=>n.hidden=(lang!=='en'));
-      frBtn.setAttribute('aria-pressed',String(lang==='fr')); enBtn.setAttribute('aria-pressed',String(lang==='en'));
-      document.documentElement.lang=lang;};
-    frBtn.addEventListener('click',()=>show('fr')); enBtn.addEventListener('click',()=>show('en')); show('fr');
+    const frBtn = document.getElementById('btn-fr');
+    const enBtn = document.getElementById('btn-en');
+    const availabilityLabel = document.getElementById('availability-label');
+
+    const show = (lang) => {
+      document.querySelectorAll('[data-fr]').forEach(n => n.hidden = (lang !== 'fr'));
+      document.querySelectorAll('[data-en]').forEach(n => n.hidden = (lang !== 'en'));
+
+      frBtn.setAttribute('aria-pressed', String(lang === 'fr'));
+      enBtn.setAttribute('aria-pressed', String(lang === 'en'));
+
+      document.documentElement.lang = lang;
+
+      if (availabilityLabel) {
+        availabilityLabel.textContent = (lang === 'fr')
+          ? 'Disponible à l’acquisition'
+          : 'Available for acquisition';
+      }
+    };
+
+    frBtn.addEventListener('click', () => show('fr'));
+    enBtn.addEventListener('click', () => show('en'));
+
+    // FR par défaut pour le .fr
+    show('fr');
   </script>
 </body>
 </html>
