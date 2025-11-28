@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Postquantique.fr — Note de référence</title>
+  <meta name="description" content="Note de référence Postquantique.fr — cadre, contexte et usages possibles pour cet actif de cybersécurité post-quantique (PQC)." />
+  <link rel="canonical" href="https://www.postquantique.fr/concept-note.html" />
+  <meta name="robots" content="noindex,follow,max-image-preview:large" />
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#121a2b;
+      --muted:#7a87a2;
+      --text:#e9eefc;
+      --accent:#8ab4ff;
+      --chip:#1b2640;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;
+      padding:0;
+      background:var(--bg);
+      color:var(--text);
+      font:15px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Arial,sans-serif;
+    }
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:860px;margin:0 auto;padding:28px 20px 40px}
+    .card{
+      background:var(--card);
+      border:1px solid #23304a;
+      border-radius:var(--radius);
+      padding:24px 22px 26px;
+      box-shadow:var(--shadow);
+    }
+    h1{
+      margin:0 0 4px;
+      font-size:30px;
+      letter-spacing:.4px;
+    }
+    h2{
+      margin:20px 0 8px;
+      font-size:18px;
+    }
+    h3{
+      margin:14px 0 6px;
+      font-size:15px;
+    }
+    p{margin:6px 0;color:var(--muted)}
+    ul{
+      margin:6px 0 10px 18px;
+      padding:0;
+      color:var(--muted);
+    }
+    li{margin:4px 0}
+    .tagline{color:var(--muted);font-size:14px;margin-bottom:10px}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      background:#1a2a47;
+      color:#fff;
+      border:1px solid #26385e;
+      padding:10px 18px;
+      border-radius:999px;
+      cursor:pointer;
+      text-decoration:none;
+      font-size:14px;
+      margin-top:10px;
+    }
+    .btn.primary{
+      background:var(--accent);
+      color:#0b1422;
+      border-color:transparent;
+    }
+    .meta{
+      font-size:13px;
+      color:var(--muted);
+      margin-bottom:10px;
+    }
+    .note{
+      font-size:13px;
+      color:var(--muted);
+      margin-top:14px;
+    }
+    .footer{
+      margin-top:18px;
+      font-size:12.5px;
+      color:var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="btn" href="/">
+      ← Retour au site Postquantique.fr
+    </a>
+
+    <div class="card" style="margin-top:14px">
+      <h1>Postquantique.fr</h1>
+      <p class="tagline"><strong>Note de référence — cybersécurité post-quantique (PQC)</strong></p>
+      <p class="meta">
+        Version 1.0 — document de cadrage descriptif à l’usage des équipes Direction générale,
+        Sécurité, Juridique, IT, Risques et M&amp;A. Ce document ne constitue pas un avis juridique
+        ou de cybersécurité opérationnelle.
+      </p>
+
+      <h2>1. Objet de Postquantique.fr</h2>
+      <p>
+        Postquantique.fr est une <strong>bannière de langage</strong> pour la cryptographie post-quantique (PQC)
+        et la résilience des systèmes d’information face aux futurs ordinateurs quantiques :
+      </p>
+      <ul>
+        <li>inventaires cryptographiques et cartographie des dépendances ;</li>
+        <li>stratégies de migration « <strong>PQ-ready</strong> » (hybrides, trajectoires, priorisation) ;</li>
+        <li>gouvernance, preuves, conformité et <strong>auditabilité</strong> ;</li>
+        <li>sensibilisation des instances de direction francophones (Comex, conseils, autorités).</li>
+      </ul>
+      <p>
+        Le site associé ne vend pas de produits de chiffrement. Il porte un <strong>récit clair et
+        pédagogique</strong> qui permet de parler de PQC à des décideurs non spécialistes tout en restant
+        aligné sur les référentiels internationaux (NIST, ANSSI, NIS2, EuroQCI, etc.). :contentReference[oaicite:0]{index=0}
+      </p>
+
+      <h2>2. Contexte 2024–2032 (PQC & résilience)</h2>
+      <h3>2.1. Normalisation post-quantique</h3>
+      <p>
+        Depuis 2024, le NIST publie progressivement des standards de cryptographie post-quantique
+        (FIPS pour Kyber, Dilithium, SPHINCS+, puis HQC), ouvrant la voie à des déploiements
+        opérationnels dans les protocoles, équipements et logiciels existants. :contentReference[oaicite:1]{index=1}
+      </p>
+      <h3>2.2. Position française & européenne</h3>
+      <p>
+        L’ANSSI a actualisé ses recommandations sur la migration vers la PQC en insistant sur les
+        <strong>mécanismes hybrides</strong> et la nécessité de planifier dès maintenant les trajectoires,
+        plutôt que d’attendre un « big bang » technologique. En parallèle, l’UE déploie EuroQCI
+        (European Quantum Communication Infrastructure) et une stratégie quantique visant le
+        leadership d’ici 2030. 
+      </p>
+      <p>
+        Dans ce contexte, une part croissante du trafic chiffré adopte déjà des approches
+        post-quantiques ou hybrides, tandis que les régulateurs et assureurs intensifient leurs
+        attentes sur la résilience cryptographique.
+      </p>
+
+      <h2>3. Rôle possible de Postquantique.fr pour un acheteur</h2>
+      <p>
+        Pour un cabinet de conseil, un intégrateur, un éditeur sécurité ou un acteur public,
+        Postquantique.fr peut devenir :
+      </p>
+      <ul>
+        <li>
+          un <strong>centre de compétences</strong> francophone sur la cryptographie post-quantique
+          (guides, matrices, démonstrateurs, formations) ;
+        </li>
+        <li>
+          la façade d’un <strong>programme de migration PQC</strong> (audit, feuille de route, pilotes
+          hybrides, accompagnement OIV/OSE) ;
+        </li>
+        <li>
+          une <strong>bannière de confiance</strong> pour structurer un écosystème (partenaires, clients,
+          académiques, autorités) autour de la thématique « post-quantique ».
+        </li>
+      </ul>
+      <p>
+        L’extension <strong>.fr</strong> positionne clairement la bannière sur le champ français /
+        francophone, tout en restant compatible avec une communication européenne (rôle de hub
+        ou de vitrine pour des offres UE).
+      </p>
+
+      <h2>4. Ciblage & cas d’usage (angle Board / CISO)</h2>
+      <h3>4.1 Profils et organisations concernés</h3>
+      <ul>
+        <li>RSSI / CISO, DSI, Chief Risk Officer, directions conformité & juridique ;</li>
+        <li>équipes en charge des programmes NIS2, résilience numérique, continuité d’activité ;</li>
+        <li>cabinets de conseil cyber, intégrateurs, éditeurs (PKI, IAM, HSM, VPN, appliances) ;</li>
+        <li>agences, hubs ou programmes publics souhaitant un <strong>hub FR</strong> sur la PQC. :contentReference[oaicite:3]{index=3}</li>
+      </ul>
+
+      <h3>4.2 Exemples d’usages concrets</h3>
+      <ul>
+        <li>portail de ressources « Postquantique.fr » aligné NIST + ANSSI ;</li>
+        <li>offre de migration PQC avec parcours structuré (assessment → pilotes → déploiement) ;</li>
+        <li>plateforme de suivi des <strong>inventaires cryptographiques</strong> et de la dette crypto ;</li>
+        <li>
+          programme de sensibilisation des Comex francophones aux risques
+          « harvest now, decrypt later » et aux échéances réglementaires.
+        </li>
+      </ul>
+
+      <h2>5. Ancrage CFO (coût alternatif & coût du retard)</h2>
+      <p>
+        Pour un groupe exposé (finance, énergie, industrie, santé, infrastructures critiques),
+        construire de zéro un récit de marque clair autour de la PQC en français, aligné sur
+        les positions NIST / ANSSI, représente :
+      </p>
+      <ul>
+        <li>
+          un <strong>coût alternatif</strong> significatif (branding, validation juridique, contenus, change
+          management) sur 12–18 mois ;
+        </li>
+        <li>
+          un <strong>coût du retard</strong> lié aux migrations menées dans l’urgence : audits défavorables,
+          projets sous contrainte, surcoûts d’intégration, pression accrue des clients et
+          régulateurs. :contentReference[oaicite:4]{index=4}
+        </li>
+      </ul>
+      <p>
+        Postquantique.fr n’apporte pas la technologie en elle-même : il offre un
+        <strong>raccourci narratif</strong> et un point de ralliement immédiatement compréhensible pour
+        cristalliser ces efforts sous une bannière unique.
+      </p>
+
+      <h2>6. Positionnement & lignes rouges</h2>
+      <p>
+        Pour éviter toute ambiguïté juridique ou réputationnelle, l’usage de Postquantique.fr
+        doit respecter les principes suivants :
+      </p>
+      <ul>
+        <li>ne pas se présenter comme <strong>ANSSI, NIST</strong> ou comme une autorité officielle ;</li>
+        <li>
+          rappeler que le site est un <strong>actif descriptif et indépendant</strong>, au service d’un
+          programme privé ou public, sans mandat réglementaire ;
+        </li>
+        <li>
+          ne pas laisser penser qu’un simple changement de nom ou de bannière
+          garantit la conformité PQC ;
+        </li>
+        <li>
+          expliciter que toute méthode, solution ou recommandation publiée sous ce
+          domaine reste sous la <strong>pleine responsabilité de l’opérateur</strong>. :contentReference[oaicite:5]{index=5}
+        </li>
+      </ul>
+
+      <h2>7. Synthèse pour les décideurs</h2>
+      <p>
+        Postquantique.fr peut être vu comme un <strong>actif de gouvernance</strong> :
+      </p>
+      <ul>
+        <li>il donne un nom clair à un chantier technique complexe ;</li>
+        <li>il rapproche RSSI, DSI, Juridique, Risques et Comex autour d’un langage partagé ;</li>
+        <li>il peut soutenir un <strong>programme pluriannuel</strong> (inventaires, migrations, conformité,
+          pédagogie) à l’échelle d’un pays, d’un secteur ou d’un grand groupe.</li>
+      </ul>
+      <p>
+        La valeur du domaine vient de sa capacité à devenir la <strong>façade naturelle</strong> de ce programme,
+        dans une fenêtre 2025–2032 où la cryptographie post-quantique passe de la théorie à la
+        mise en œuvre opérationnelle.
+      </p>
+
+      <p class="footer">
+        © Postquantique.fr — note de référence descriptive. Cette page ne fournit pas de conseil
+        juridique, financier ou de cybersécurité opérationnelle. Toute décision de migration,
+        d’architecture ou d’investissement relève des instances compétentes de l’organisation
+        qui exploite le domaine.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
